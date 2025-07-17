@@ -10,28 +10,25 @@ const Header = () => {
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'Services', href: '/services' },
-    { name: 'Residential', href: '/residential' },
     { name: 'Commercial', href: '/commercial' },
+    { name: 'Residential', href: '/residential' },
     { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'Blog', href: '/blog' }
+    { name: 'Contact', href: '/contact' }
   ];
 
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-50">
+    <header className="bg-white/95 backdrop-blur-sm shadow-lg sticky top-0 z-50 border-b border-border/50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">TP</span>
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-gray-900">Tampa Pro Wash</h1>
-              <p className="text-xs text-gray-600">Pressure Washing Experts</p>
-            </div>
+          <Link to="/" className="flex items-center space-x-3">
+            <img 
+              src="/lovable-uploads/9aa11d17-4dbd-4473-a87d-9449d96ee32b.png" 
+              alt="Tampa's Best Pressure Wash" 
+              className="h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -40,11 +37,14 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-medium transition-colors hover:text-blue-600 ${
-                  isActive(item.href) ? 'text-blue-600' : 'text-gray-700'
+                className={`text-sm font-semibold transition-colors hover:text-primary relative ${
+                  isActive(item.href) ? 'text-primary' : 'text-foreground'
                 }`}
               >
                 {item.name}
+                {isActive(item.href) && (
+                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"></div>
+                )}
               </Link>
             ))}
           </nav>
@@ -53,7 +53,7 @@ const Header = () => {
           <div className="hidden lg:flex items-center space-x-4">
             <a
               href="tel:+18135551234"
-              className="flex items-center space-x-2 bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors"
+              className="flex items-center space-x-2 gradient-primary text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
               <Phone className="w-4 h-4" />
               <span>(813) 555-1234</span>
@@ -63,7 +63,7 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2"
+            className="lg:hidden p-2 hover:bg-muted rounded-lg transition-colors"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -71,14 +71,14 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t">
+          <div className="lg:hidden py-4 border-t border-border/50 bg-white/95 backdrop-blur-sm">
             <nav className="flex flex-col space-y-4">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`text-sm font-medium transition-colors hover:text-blue-600 ${
-                    isActive(item.href) ? 'text-blue-600' : 'text-gray-700'
+                  className={`text-sm font-semibold transition-colors hover:text-primary px-2 py-1 ${
+                    isActive(item.href) ? 'text-primary' : 'text-foreground'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -87,7 +87,7 @@ const Header = () => {
               ))}
               <a
                 href="tel:+18135551234"
-                className="flex items-center space-x-2 bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors w-fit"
+                className="flex items-center space-x-2 gradient-primary text-white px-6 py-3 rounded-xl font-semibold w-fit"
               >
                 <Phone className="w-4 h-4" />
                 <span>(813) 555-1234</span>

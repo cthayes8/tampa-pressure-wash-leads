@@ -2,7 +2,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import StickyElements from '@/components/StickyElements';
-import { Building2, Users, Clock, Award } from 'lucide-react';
+import { Building2, Users, Clock, Award, Shield, Zap, Star, ArrowRight } from 'lucide-react';
 
 const Commercial = () => {
   return (
@@ -10,199 +10,252 @@ const Commercial = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-gray-700 to-gray-800 text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Commercial Pressure Washing Services in Tampa
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0 gradient-secondary"></div>
+        <div className="absolute inset-0 bg-black/10"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center text-white">
+            <div className="inline-flex items-center space-x-2 bg-accent/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <Building2 className="w-4 h-4" />
+              <span>Commercial Pressure Washing Specialists</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              Tampa Bay's Premier
+              <span className="block text-accent">Commercial Cleaning</span>
             </h1>
-            <p className="text-xl text-gray-200 mb-8">
-              Professional exterior cleaning for businesses, restaurants, retail stores, and commercial properties. 
-              Maintain your professional image with regular cleaning services.
+            <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+              Professional exterior cleaning that enhances your business image, protects your investment, 
+              and keeps customers coming back. Trusted by Tampa's leading businesses.
             </p>
-            <div className="flex flex-col md:flex-row gap-4 justify-center">
+            <div className="flex flex-col md:flex-row gap-4 justify-center mb-12">
               <a
                 href="tel:+18135551234"
-                className="bg-orange-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-600 transition-colors"
+                className="bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2 shadow-xl"
               >
-                Call (813) 555-1234
+                <span>Call (813) 555-1234</span>
+                <ArrowRight className="w-5 h-5" />
               </a>
               <a
                 href="/contact"
-                className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-gray-800 transition-colors"
+                className="bg-white/20 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/30 transition-all duration-300"
               >
-                Request Quote
+                Get Commercial Quote
               </a>
+            </div>
+            
+            {/* Trust indicators */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-accent">500+</div>
+                <div className="text-sm text-blue-100">Commercial Projects</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-accent">$5M</div>
+                <div className="text-sm text-blue-100">Insurance Coverage</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-accent">24hr</div>
+                <div className="text-sm text-blue-100">Emergency Service</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Commercial Services */}
-      <section className="py-16">
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Commercial Cleaning Services
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              Comprehensive Commercial Solutions
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Keep your business looking professional with our comprehensive commercial pressure washing services.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              From office buildings to retail centers, we deliver exceptional results that enhance your professional image.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-xl shadow-lg border">
-              <Building2 className="w-12 h-12 text-blue-600 mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Building Exteriors</h3>
-              <p className="text-gray-600 mb-4">
-                Professional cleaning for office buildings, retail stores, restaurants, and other commercial structures.
-              </p>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Storefront cleaning</li>
-                <li>• Building facades</li>
-                <li>• Window surrounding areas</li>
-                <li>• Entry ways and canopies</li>
-              </ul>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow-lg border">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-blue-600 font-bold text-xl">🚗</span>
+            {[
+              {
+                icon: Building2,
+                title: 'Office Buildings',
+                description: 'Professional cleaning for corporate facilities, maintaining a pristine business environment.',
+                features: ['Building exteriors', 'Storefront cleaning', 'Window surrounds', 'Entry ways']
+              },
+              {
+                icon: '🏪',
+                title: 'Retail Centers',
+                description: 'Attract customers with clean, inviting shopping environments that drive foot traffic.',
+                features: ['Shopping centers', 'Strip malls', 'Individual stores', 'Parking areas']
+              },
+              {
+                icon: '🍽️',
+                title: 'Restaurants',
+                description: 'Maintain health standards and customer appeal with specialized restaurant cleaning.',
+                features: ['Grease removal', 'Patio cleaning', 'Drive-through areas', 'Dumpster areas']
+              },
+              {
+                icon: '🏭',
+                title: 'Industrial',
+                description: 'Heavy-duty cleaning for warehouses, manufacturing, and industrial facilities.',
+                features: ['Warehouse exteriors', 'Loading docks', 'Equipment cleaning', 'Safety compliance']
+              },
+              {
+                icon: '🚛',
+                title: 'Fleet Services',
+                description: 'Keep your company vehicles clean and professional with regular fleet washing.',
+                features: ['Delivery trucks', 'Company cars', 'Service vehicles', 'Equipment']
+              },
+              {
+                icon: '🚗',
+                title: 'Parking Areas',
+                description: 'Clean parking lots and walkways that create positive first impressions.',
+                features: ['Parking lots', 'Oil stain removal', 'Sidewalks', 'Crosswalks']
+              }
+            ].map((service, index) => (
+              <div key={index} className="bg-card p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 group hover:scale-105">
+                <div className="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  {typeof service.icon === 'string' ? (
+                    <span className="text-white text-2xl">{service.icon}</span>
+                  ) : (
+                    <service.icon className="w-8 h-8 text-white" />
+                  )}
+                </div>
+                <h3 className="text-xl font-semibold text-foreground mb-3">{service.title}</h3>
+                <p className="text-muted-foreground mb-6">{service.description}</p>
+                <ul className="space-y-2">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center space-x-2 text-sm text-muted-foreground">
+                      <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Parking Areas</h3>
-              <p className="text-gray-600 mb-4">
-                Clean parking lots, walkways, and drive-through areas to maintain a professional appearance.
-              </p>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Parking lot cleaning</li>
-                <li>• Oil stain removal</li>
-                <li>• Sidewalk cleaning</li>
-                <li>• Drive-through areas</li>
-              </ul>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow-lg border">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-blue-600 font-bold text-xl">🚛</span>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Fleet Washing</h3>
-              <p className="text-gray-600 mb-4">
-                Keep your company vehicles clean and professional with regular fleet washing services.
-              </p>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Delivery trucks</li>
-                <li>• Company cars</li>
-                <li>• Service vehicles</li>
-                <li>• Equipment cleaning</li>
-              </ul>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow-lg border">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-blue-600 font-bold text-xl">🏪</span>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Retail Stores</h3>
-              <p className="text-gray-600 mb-4">
-                Attract customers with clean, inviting storefronts and shopping areas.
-              </p>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Storefront washing</li>
-                <li>• Shopping center cleaning</li>
-                <li>• Entrance areas</li>
-                <li>• Outdoor seating areas</li>
-              </ul>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow-lg border">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-blue-600 font-bold text-xl">🍽️</span>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Restaurants</h3>
-              <p className="text-gray-600 mb-4">
-                Maintain health standards and customer appeal with regular restaurant exterior cleaning.
-              </p>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Grease removal</li>
-                <li>• Patio cleaning</li>
-                <li>• Entrance areas</li>
-                <li>• Dumpster area cleaning</li>
-              </ul>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow-lg border">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-blue-600 font-bold text-xl">🏭</span>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Industrial</h3>
-              <p className="text-gray-600 mb-4">
-                Heavy-duty cleaning for warehouses, manufacturing facilities, and industrial properties.
-              </p>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Warehouse exteriors</li>
-                <li>• Loading docks</li>
-                <li>• Industrial equipment</li>
-                <li>• Safety compliance cleaning</li>
-              </ul>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Benefits for Business */}
-      <section className="py-16 bg-gray-50">
+      {/* Why Choose Us */}
+      <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Why Businesses Choose Tampa Pro Wash
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              Why Tampa's Top Businesses Choose Us
             </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              We're not just another cleaning company. We're your partner in maintaining a professional business image.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Flexible Scheduling</h3>
-              <p className="text-gray-600">Early morning, evening, and weekend service to minimize business disruption.</p>
-            </div>
-            <div className="text-center">
-              <Users className="w-12 h-12 text-green-600 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Professional Team</h3>
-              <p className="text-gray-600">Uniformed, trained technicians who understand commercial property needs.</p>
-            </div>
-            <div className="text-center">
-              <Award className="w-12 h-12 text-yellow-500 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Reliable Service</h3>
-              <p className="text-gray-600">Consistent, high-quality results with scheduled maintenance programs.</p>
-            </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-orange-600 font-bold text-xl">$</span>
+            {[
+              {
+                icon: Clock,
+                title: 'Flexible Scheduling',
+                description: 'We work around your business hours with early morning, evening, and weekend availability.'
+              },
+              {
+                icon: Shield,
+                title: '$5M Insured',
+                description: 'Comprehensive liability coverage protects your property and gives you complete peace of mind.'
+              },
+              {
+                icon: Award,
+                title: 'Proven Results',
+                description: 'Over 500 successful commercial projects with a 100% customer satisfaction rate.'
+              },
+              {
+                icon: Zap,
+                title: 'Emergency Service',
+                description: '24-hour emergency response for urgent cleaning needs and unexpected situations.'
+              }
+            ].map((benefit, index) => (
+              <div key={index} className="text-center group">
+                <div className="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <benefit.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mb-3">{benefit.title}</h3>
+                <p className="text-muted-foreground">{benefit.description}</p>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Competitive Rates</h3>
-              <p className="text-gray-600">Volume discounts and contract pricing for regular maintenance programs.</p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-foreground mb-12">
+              Trusted by Tampa Bay's Leading Businesses
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              <div className="bg-card p-8 rounded-2xl shadow-lg border border-border/50">
+                <div className="flex items-center space-x-1 mb-4 justify-center">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-4 italic">
+                  "Tampa's Best Pressure Wash transformed our shopping center. Professional, reliable, and the results speak for themselves. Our customers notice the difference."
+                </p>
+                <div className="font-semibold text-foreground">Sarah Johnson</div>
+                <div className="text-sm text-muted-foreground">Property Manager, Westshore Plaza</div>
+              </div>
+              
+              <div className="bg-card p-8 rounded-2xl shadow-lg border border-border/50">
+                <div className="flex items-center space-x-1 mb-4 justify-center">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-4 italic">
+                  "Outstanding service! They work around our business hours and deliver exceptional results every time. Highly recommend for any commercial property."
+                </p>
+                <div className="font-semibold text-foreground">Mike Rodriguez</div>
+                <div className="text-sm text-muted-foreground">Facilities Director, Tampa Tech Center</div>
+              </div>
+            </div>
+            
+            <div className="flex items-center justify-center space-x-8 text-muted-foreground">
+              <div>4.9★ Google Rating</div>
+              <div>•</div>
+              <div>500+ Projects Completed</div>
+              <div>•</div>
+              <div>15+ Years Experience</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-blue-600 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Ready to Enhance Your Business Image?
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 gradient-primary"></div>
+        <div className="absolute inset-0 bg-black/10"></div>
+        
+        <div className="container mx-auto px-4 relative z-10 text-center text-white">
+          <h2 className="text-4xl font-bold mb-6">
+            Ready to Elevate Your Business Image?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Contact us today for a free commercial cleaning estimate. We'll work with your schedule and budget.
+            Join hundreds of Tampa Bay businesses that trust us with their exterior cleaning needs. 
+            Get your free commercial estimate today.
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             <a
               href="tel:+18135551234"
-              className="bg-orange-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-600 transition-colors"
+              className="bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:scale-105 transition-all duration-300 shadow-xl"
             >
               Call (813) 555-1234
             </a>
             <a
               href="/contact"
-              className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-blue-700 transition-colors"
+              className="bg-white/20 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/30 transition-all duration-300"
             >
               Request Commercial Quote
             </a>
