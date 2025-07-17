@@ -5,11 +5,24 @@ import { Link } from 'react-router-dom';
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Premium gradient background */}
-      <div className="absolute inset-0 gradient-primary"></div>
+      {/* Background Video */}
+      <div className="absolute inset-0 w-full h-full">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/pressure-washing-bg.mp4" type="video/mp4" />
+          {/* Fallback gradient if video doesn't load */}
+        </video>
+        {/* Video overlay for text readability */}
+        <div className="absolute inset-0 bg-black/50"></div>
+      </div>
       
-      {/* Overlay pattern */}
-      <div className="absolute inset-0 bg-black/20"></div>
+      {/* Fallback gradient background (shown if video fails to load) */}
+      <div className="absolute inset-0 gradient-primary opacity-90"></div>
       
       {/* Floating elements for visual interest */}
       <div className="absolute top-20 right-20 w-32 h-32 bg-accent/20 rounded-full blur-xl animate-pulse"></div>
