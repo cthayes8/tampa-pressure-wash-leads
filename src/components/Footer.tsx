@@ -10,16 +10,16 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">TP</span>
               </div>
               <div>
                 <h3 className="text-xl font-bold">Tampa Pro Wash</h3>
-                <p className="text-sm text-gray-400">Pressure Washing Experts</p>
+                <p className="text-sm text-gray-400">Commercial Pressure Washing Experts</p>
               </div>
             </div>
             <p className="text-gray-400 mb-4">
-              Tampa Bay's trusted pressure washing company. Professional, reliable, and eco-friendly cleaning services since 2015.
+              Tampa Bay's leading commercial pressure washing contractor. Serving 500+ commercial properties with professional, compliant cleaning services since 2015.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -33,14 +33,14 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Our Services</h4>
+            <h4 className="text-lg font-semibold mb-4">Commercial Services</h4>
             <ul className="space-y-2">
-              <li><Link to="/residential" className="text-gray-400 hover:text-white transition-colors">Residential Cleaning</Link></li>
-              <li><Link to="/commercial" className="text-gray-400 hover:text-white transition-colors">Commercial Cleaning</Link></li>
-              <li><Link to="/services" className="text-gray-400 hover:text-white transition-colors">House Washing</Link></li>
-              <li><Link to="/services" className="text-gray-400 hover:text-white transition-colors">Driveway Cleaning</Link></li>
-              <li><Link to="/services" className="text-gray-400 hover:text-white transition-colors">Deck & Fence Cleaning</Link></li>
-              <li><Link to="/services" className="text-gray-400 hover:text-white transition-colors">Roof Cleaning</Link></li>
+              <li><Link to="/commercial" className="text-gray-400 hover:text-white transition-colors">Commercial Properties</Link></li>
+              <li><Link to="/commercial" className="text-gray-400 hover:text-white transition-colors">Property Management</Link></li>
+              <li><Link to="/commercial" className="text-gray-400 hover:text-white transition-colors">Office Buildings</Link></li>
+              <li><Link to="/commercial" className="text-gray-400 hover:text-white transition-colors">Retail Centers</Link></li>
+              <li><Link to="/commercial" className="text-gray-400 hover:text-white transition-colors">Fleet Washing</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Emergency Services</Link></li>
             </ul>
           </div>
 
@@ -49,7 +49,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
-              <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Get Free Quote</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Get Commercial Quote</Link></li>
               <li><Link to="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Reviews</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Gallery</a></li>
@@ -61,30 +61,30 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-orange-500" />
+                <Phone className="w-5 h-5 text-cyan-400" />
                 <a href="tel:+18135551234" className="text-gray-400 hover:text-white transition-colors">
                   (813) 555-1234
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-orange-500" />
+                <Mail className="w-5 h-5 text-cyan-400" />
                 <a href="mailto:info@tampaprowash.com" className="text-gray-400 hover:text-white transition-colors">
                   info@tampaprowash.com
                 </a>
               </div>
               <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-orange-500 mt-1" />
+                <MapPin className="w-5 h-5 text-cyan-400 mt-1" />
                 <div className="text-gray-400">
                   <div>Serving Tampa Bay Area</div>
                   <div>Hillsborough, Pinellas & Pasco Counties</div>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <Clock className="w-5 h-5 text-orange-500 mt-1" />
+                <Clock className="w-5 h-5 text-cyan-400 mt-1" />
                 <div className="text-gray-400">
                   <div>Mon-Fri: 7AM-7PM</div>
                   <div>Sat: 8AM-5PM</div>
-                  <div>Sun: Emergency Only</div>
+                  <div>24/7 Emergency Service</div>
                 </div>
               </div>
             </div>

@@ -1,42 +1,42 @@
 
-import { Shield, Clock, Award, Users, Zap, Leaf } from 'lucide-react';
+import { Shield, Clock, Award, Users, Zap, FileCheck } from 'lucide-react';
 
 const WhyChooseUs = () => {
   const benefits = [
     {
       icon: Shield,
-      title: '$5M Insured',
-      description: 'Comprehensive liability coverage protects your property and gives you complete peace of mind.',
+      title: '$5M Liability Insurance',
+      description: 'Comprehensive commercial liability coverage protects your property and business from any risk.',
       color: 'text-blue-600'
     },
     {
-      icon: Clock,
-      title: '24hr Emergency',
-      description: 'Round-the-clock emergency response for urgent cleaning needs and unexpected situations.',
+      icon: FileCheck,
+      title: 'OSHA & EPA Compliant',
+      description: 'All work performed in compliance with safety regulations and environmental standards.',
       color: 'text-accent'
     },
     {
-      icon: Award,
-      title: '15+ Years Experience',
-      description: 'Proven track record with over 500 successful commercial projects and 100% satisfaction rate.',
+      icon: Clock,
+      title: '24/7 Emergency Response',
+      description: 'Round-the-clock emergency response for urgent cleaning needs within 2 hours.',
       color: 'text-primary'
     },
     {
       icon: Users,
-      title: 'Commercial Specialists',
-      description: 'Dedicated team trained specifically for commercial properties and business requirements.',
+      title: 'Property Management Partners',
+      description: 'We work with property management companies and understand multi-property needs.',
       color: 'text-accent'
     },
     {
       icon: Zap,
-      title: 'Advanced Equipment',
-      description: 'State-of-the-art pressure washing equipment for superior results and faster completion.',
+      title: 'Minimal Business Disruption',
+      description: 'Flexible scheduling during off-hours and weekends to minimize operational impact.',
       color: 'text-primary'
     },
     {
-      icon: Leaf,
-      title: 'Eco-Friendly',
-      description: 'Environmentally safe cleaning solutions that protect your landscaping and local ecosystem.',
+      icon: Award,
+      title: '500+ Commercial Properties',
+      description: 'Proven track record with office buildings, retail centers, and industrial facilities.',
       color: 'text-green-600'
     }
   ];
@@ -47,7 +47,7 @@ const WhyChooseUs = () => {
       <div className="absolute top-20 left-20 w-32 h-32 bg-accent/20 rounded-full blur-xl animate-pulse"></div>
       <div className="absolute bottom-20 right-20 w-48 h-48 bg-primary/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container relative z-10">
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-accent/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-6 text-accent">
             <Award className="w-4 h-4" />
@@ -55,11 +55,11 @@ const WhyChooseUs = () => {
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             The Clear Choice for
-            <span className="block text-gradient">Professional Cleaning</span>
+            <span className="block text-gradient">Commercial Properties</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We're not just another cleaning company. We're your partner in maintaining 
-            a professional business image that drives results.
+            We're not just another cleaning company. We're your strategic partner in property maintenance, 
+            compliance, and professional image management.
           </p>
         </div>
 
@@ -83,16 +83,16 @@ const WhyChooseUs = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <div className="bg-gradient-primary p-8 rounded-2xl text-white">
-            <h3 className="text-2xl font-bold mb-4">Ready to See the Difference?</h3>
-            <p className="text-blue-100 mb-6">
-              Join hundreds of Tampa Bay businesses that trust us with their cleaning needs.
+          <div className="bg-gradient-to-r from-gray-900 to-blue-900 p-8 rounded-2xl text-white shadow-2xl">
+            <h3 className="text-2xl font-bold mb-4 text-white">Ready to Partner with Tampa's Leading Commercial Contractor?</h3>
+            <p className="text-gray-100 mb-6 text-lg">
+              Join 500+ Tampa Bay commercial properties that trust us with their maintenance needs.
             </p>
             <a
               href="tel:+18135551234"
-              className="bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-xl text-lg font-bold hover:scale-105 transition-all duration-300 shadow-xl"
+              className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 rounded-xl text-lg font-bold hover:scale-105 transition-all duration-300 shadow-xl"
             >
-              Call (813) 555-1234
+              Schedule Property Assessment
             </a>
           </div>
         </div>

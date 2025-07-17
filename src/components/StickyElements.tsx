@@ -12,16 +12,16 @@ const StickyElements = () => {
         <div className="flex">
           <a
             href="tel:+18135551234"
-            className="flex-1 bg-blue-600 text-white py-4 px-6 flex items-center justify-center space-x-2 font-semibold"
+            className="flex-1 bg-slate-800 text-white py-4 px-6 flex items-center justify-center space-x-2 font-semibold"
           >
             <Phone className="w-5 h-5" />
             <span>Call Now</span>
           </a>
           <a
             href="/contact"
-            className="flex-1 bg-orange-500 text-white py-4 px-6 flex items-center justify-center space-x-2 font-semibold"
+            className="flex-1 bg-cyan-500 text-white py-4 px-6 flex items-center justify-center space-x-2 font-semibold"
           >
-            <span>Free Quote</span>
+            <span>Commercial Quote</span>
           </a>
         </div>
       </div>
@@ -29,7 +29,7 @@ const StickyElements = () => {
       {/* Floating Chat Button */}
       <button
         onClick={() => setShowChat(!showChat)}
-        className="fixed bottom-20 md:bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors"
+        className="fixed bottom-20 md:bottom-6 right-6 z-50 bg-cyan-500 text-white p-4 rounded-full shadow-lg hover:bg-cyan-600 transition-colors"
       >
         <MessageCircle className="w-6 h-6" />
       </button>
@@ -38,12 +38,12 @@ const StickyElements = () => {
       {showChat && (
         <div className="fixed bottom-32 md:bottom-20 right-6 z-50 bg-white rounded-lg shadow-xl p-6 w-80 border">
           <div className="mb-4">
-            <h3 className="font-semibold text-gray-900">Get a Quick Quote</h3>
-            <p className="text-sm text-gray-600">Text us for instant response!</p>
+            <h3 className="font-semibold text-gray-900">Commercial Property Quote</h3>
+            <p className="text-sm text-gray-600">Text us for instant commercial pricing!</p>
           </div>
           <a
-            href="sms:+18135551234?body=Hi! I'd like a quote for pressure washing."
-            className="block w-full bg-blue-600 text-white py-3 px-4 rounded-lg text-center font-semibold hover:bg-blue-700 transition-colors"
+            href="sms:+18135551234?body=Hi! I'd like a quote for commercial pressure washing."
+            className="block w-full bg-cyan-500 text-white py-3 px-4 rounded-lg text-center font-semibold hover:bg-cyan-600 transition-colors"
           >
             Text Us Now
           </a>

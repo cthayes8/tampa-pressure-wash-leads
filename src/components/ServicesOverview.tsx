@@ -1,22 +1,22 @@
 
-import { Building2, Home, Truck, Sparkles } from 'lucide-react';
+import { Building2, Home, Truck, Sparkles, Shield, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ServicesOverview = () => {
   const services = [
     {
       icon: Building2,
-      title: 'Commercial Pressure Washing',
-      description: 'Professional exterior cleaning for office buildings, retail centers, restaurants, and industrial facilities.',
+      title: 'Commercial Properties',
+      description: 'Professional exterior cleaning for office buildings, retail centers, shopping plazas, and industrial facilities.',
       link: '/commercial',
-      features: ['Office buildings', 'Shopping centers', 'Restaurants', 'Industrial facilities']
+      features: ['Office buildings', 'Shopping centers', 'Retail plazas', 'Industrial facilities']
     },
     {
-      icon: Home,
-      title: 'Residential Services',
-      description: 'Transform your home\'s curb appeal with our comprehensive residential cleaning solutions.',
-      link: '/residential',
-      features: ['House washing', 'Driveway cleaning', 'Deck restoration', 'Roof cleaning']
+      icon: Shield,
+      title: 'Property Management',
+      description: 'Comprehensive maintenance solutions for multi-property portfolios with scheduling and reporting.',
+      link: '/commercial',
+      features: ['Multi-property discounts', 'Scheduled maintenance', 'Digital reporting', 'Priority service']
     },
     {
       icon: Truck,
@@ -26,11 +26,11 @@ const ServicesOverview = () => {
       features: ['Fleet washing', 'Heavy equipment', 'Construction vehicles', 'Delivery trucks']
     },
     {
-      icon: Sparkles,
-      title: 'Specialized Cleaning',
-      description: 'Advanced cleaning solutions for unique surfaces and challenging cleaning situations.',
-      link: '/services',
-      features: ['Graffiti removal', 'Oil stain treatment', 'Concrete sealing', 'Emergency cleanup']
+      icon: Calendar,
+      title: 'Emergency Services',
+      description: '24/7 emergency response for urgent cleaning needs including graffiti removal and accident cleanup.',
+      link: '/contact',
+      features: ['24/7 availability', 'Emergency response', 'Graffiti removal', 'Accident cleanup']
     }
   ];
 
@@ -40,19 +40,19 @@ const ServicesOverview = () => {
       <div className="absolute top-10 right-10 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 left-10 w-48 h-48 bg-primary/10 rounded-full blur-2xl"></div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container relative z-10">
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-accent/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-6 text-accent">
             <Sparkles className="w-4 h-4" />
-            <span>Comprehensive Cleaning Solutions</span>
+            <span>Commercial Cleaning Solutions</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Professional Services for
-            <span className="block text-gradient">Every Need</span>
+            Commercial Cleaning Services
+            <span className="block text-gradient">For Tampa Businesses</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            From commercial facilities to residential properties, we deliver exceptional results 
-            that enhance your image and protect your investment.
+            Professional pressure washing solutions that maintain your property value, 
+            ensure compliance, and enhance your business image.
           </p>
         </div>
 
@@ -90,7 +90,7 @@ const ServicesOverview = () => {
         <div className="text-center mt-16">
           <Link
             to="/services"
-            className="bg-gradient-primary text-white px-8 py-4 rounded-xl text-lg font-bold hover:scale-105 transition-all duration-300 shadow-2xl inline-block"
+            className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-4 rounded-xl text-lg font-bold hover:scale-105 transition-all duration-300 shadow-2xl inline-block"
           >
             View All Services
           </Link>
