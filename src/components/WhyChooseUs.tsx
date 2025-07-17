@@ -1,90 +1,99 @@
 
-import { Shield, Clock, Award, Leaf, Users, DollarSign } from 'lucide-react';
+import { Shield, Clock, Award, Users, Zap, Leaf } from 'lucide-react';
 
 const WhyChooseUs = () => {
-  const features = [
+  const benefits = [
     {
       icon: Shield,
-      title: 'Licensed & Insured',
-      description: 'Fully licensed and insured with $2M liability coverage for your peace of mind'
+      title: '$5M Insured',
+      description: 'Comprehensive liability coverage protects your property and gives you complete peace of mind.',
+      color: 'text-blue-600'
     },
     {
       icon: Clock,
-      title: 'Fast Response Times',
-      description: '24-hour response time with same-day service available throughout Tampa Bay'
+      title: '24hr Emergency',
+      description: 'Round-the-clock emergency response for urgent cleaning needs and unexpected situations.',
+      color: 'text-accent'
     },
     {
       icon: Award,
       title: '15+ Years Experience',
-      description: 'Over 15 years of pressure washing expertise with 2,100+ satisfied customers'
-    },
-    {
-      icon: Leaf,
-      title: 'Eco-Friendly Methods',
-      description: 'Environmentally safe cleaning solutions that protect your landscaping'
+      description: 'Proven track record with over 500 successful commercial projects and 100% satisfaction rate.',
+      color: 'text-primary'
     },
     {
       icon: Users,
-      title: 'Professional Team',
-      description: 'Trained, uniformed technicians who treat your property with respect'
+      title: 'Commercial Specialists',
+      description: 'Dedicated team trained specifically for commercial properties and business requirements.',
+      color: 'text-accent'
     },
     {
-      icon: DollarSign,
-      title: 'Upfront Pricing',
-      description: 'No hidden fees or surprises - transparent pricing before we start'
+      icon: Zap,
+      title: 'Advanced Equipment',
+      description: 'State-of-the-art pressure washing equipment for superior results and faster completion.',
+      color: 'text-primary'
+    },
+    {
+      icon: Leaf,
+      title: 'Eco-Friendly',
+      description: 'Environmentally safe cleaning solutions that protect your landscaping and local ecosystem.',
+      color: 'text-green-600'
     }
   ];
 
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Why Tampa Chooses Us
+    <section className="py-20 bg-muted/30 relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute top-20 left-20 w-32 h-32 bg-accent/20 rounded-full blur-xl animate-pulse"></div>
+      <div className="absolute bottom-20 right-20 w-48 h-48 bg-primary/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center space-x-2 bg-accent/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-6 text-accent">
+            <Award className="w-4 h-4" />
+            <span>Why Tampa Businesses Choose Us</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            The Clear Choice for
+            <span className="block text-gradient">Professional Cleaning</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            We've built our reputation on quality work, fair pricing, and exceptional customer service. 
-            Here's what sets us apart from the competition.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            We're not just another cleaning company. We're your partner in maintaining 
+            a professional business image that drives results.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="text-center p-6 rounded-lg hover:bg-gray-50 transition-colors"
+          {benefits.map((benefit, index) => (
+            <div 
+              key={index} 
+              className="group bg-card/70 backdrop-blur-sm p-8 rounded-2xl border border-border/50 hover:border-accent/50 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 hover:scale-105"
             >
-              <div className="flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-4 mx-auto">
-                <feature.icon className="w-8 h-8 text-orange-600" />
+              <div className="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <benefit.icon className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                {feature.title}
+              <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors">
+                {benefit.title}
               </h3>
-              <p className="text-gray-600">
-                {feature.description}
+              <p className="text-muted-foreground leading-relaxed">
+                {benefit.description}
               </p>
             </div>
           ))}
         </div>
 
-        {/* Trust badges */}
         <div className="mt-16 text-center">
-          <h3 className="text-xl font-semibold text-gray-900 mb-8">
-            Trusted by Tampa Bay Residents & Businesses
-          </h3>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            <div className="bg-gray-100 px-6 py-3 rounded-lg">
-              <span className="font-semibold">BBB A+ Rated</span>
-            </div>
-            <div className="bg-gray-100 px-6 py-3 rounded-lg">
-              <span className="font-semibold">Google Reviews 4.9★</span>
-            </div>
-            <div className="bg-gray-100 px-6 py-3 rounded-lg">
-              <span className="font-semibold">Angie's List Super Service</span>
-            </div>
-            <div className="bg-gray-100 px-6 py-3 rounded-lg">
-              <span className="font-semibold">HomeAdvisor Elite Service</span>
-            </div>
+          <div className="bg-gradient-primary p-8 rounded-2xl text-white">
+            <h3 className="text-2xl font-bold mb-4">Ready to See the Difference?</h3>
+            <p className="text-blue-100 mb-6">
+              Join hundreds of Tampa Bay businesses that trust us with their cleaning needs.
+            </p>
+            <a
+              href="tel:+18135551234"
+              className="bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-xl text-lg font-bold hover:scale-105 transition-all duration-300 shadow-xl"
+            >
+              Call (813) 555-1234
+            </a>
           </div>
         </div>
       </div>

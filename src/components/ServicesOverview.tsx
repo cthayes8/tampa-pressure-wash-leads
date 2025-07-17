@@ -1,89 +1,98 @@
 
-import { Home, Building2, Car, Fence, Waves, Sparkles } from 'lucide-react';
+import { Building2, Home, Truck, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ServicesOverview = () => {
   const services = [
     {
-      icon: Home,
-      title: 'House Washing',
-      description: 'Gentle, effective cleaning for siding, brick, stucco, and more',
-      link: '/residential'
-    },
-    {
       icon: Building2,
-      title: 'Commercial Cleaning',
-      description: 'Professional exterior cleaning for businesses and commercial properties',
-      link: '/commercial'
+      title: 'Commercial Pressure Washing',
+      description: 'Professional exterior cleaning for office buildings, retail centers, restaurants, and industrial facilities.',
+      link: '/commercial',
+      features: ['Office buildings', 'Shopping centers', 'Restaurants', 'Industrial facilities']
     },
     {
-      icon: Waves,
-      title: 'Driveway & Concrete',
-      description: 'High-pressure cleaning to remove stains, oil, and grime',
-      link: '/services'
+      icon: Home,
+      title: 'Residential Services',
+      description: 'Transform your home\'s curb appeal with our comprehensive residential cleaning solutions.',
+      link: '/residential',
+      features: ['House washing', 'Driveway cleaning', 'Deck restoration', 'Roof cleaning']
     },
     {
-      icon: Fence,
-      title: 'Deck & Fence Cleaning',
-      description: 'Restore your outdoor spaces to their original beauty',
-      link: '/services'
-    },
-    {
-      icon: Car,
-      title: 'Fleet Washing',
-      description: 'Keep your business vehicles clean and professional',
-      link: '/commercial'
+      icon: Truck,
+      title: 'Fleet & Equipment',
+      description: 'Keep your company vehicles and equipment clean and professional with regular maintenance.',
+      link: '/commercial',
+      features: ['Fleet washing', 'Heavy equipment', 'Construction vehicles', 'Delivery trucks']
     },
     {
       icon: Sparkles,
-      title: 'Roof Cleaning',
-      description: 'Safe, low-pressure roof cleaning to remove algae and stains',
-      link: '/services'
+      title: 'Specialized Cleaning',
+      description: 'Advanced cleaning solutions for unique surfaces and challenging cleaning situations.',
+      link: '/services',
+      features: ['Graffiti removal', 'Oil stain treatment', 'Concrete sealing', 'Emergency cleanup']
     }
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Our Pressure Washing Services
+    <section className="py-20 bg-background relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute top-10 right-10 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-10 left-10 w-48 h-48 bg-primary/10 rounded-full blur-2xl"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center space-x-2 bg-accent/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-6 text-accent">
+            <Sparkles className="w-4 h-4" />
+            <span>Comprehensive Cleaning Solutions</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            Professional Services for
+            <span className="block text-gradient">Every Need</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            From residential homes to commercial properties, we deliver exceptional results 
-            that enhance curb appeal and protect your investment.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            From commercial facilities to residential properties, we deliver exceptional results 
+            that enhance your image and protect your investment.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <Link
               key={index}
               to={service.link}
-              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
+              className="group bg-card/50 backdrop-blur-sm p-8 rounded-2xl border border-border/50 hover:border-accent/50 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 hover:scale-105"
             >
-              <div className="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-lg mb-4 group-hover:bg-blue-600 transition-colors">
-                <service.icon className="w-8 h-8 text-blue-600 group-hover:text-white" />
+              <div className="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <service.icon className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+              <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors">
                 {service.title}
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-muted-foreground mb-6 leading-relaxed">
                 {service.description}
               </p>
-              <div className="text-orange-500 font-semibold group-hover:text-orange-600 transition-colors">
+              <ul className="space-y-2">
+                {service.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-center space-x-2 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6 text-accent font-semibold group-hover:translate-x-2 transition-transform">
                 Learn More →
               </div>
             </Link>
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-16">
           <Link
-            to="/contact"
-            className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center space-x-2"
+            to="/services"
+            className="bg-gradient-primary text-white px-8 py-4 rounded-xl text-lg font-bold hover:scale-105 transition-all duration-300 shadow-2xl inline-block"
           >
-            <span>Get Your Free Estimate Today</span>
+            View All Services
           </Link>
         </div>
       </div>
